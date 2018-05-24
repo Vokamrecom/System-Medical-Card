@@ -1,0 +1,701 @@
+﻿<Window x:Name="MainForm" x:Class="SystemMed.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMed"
+      
+
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" ResizeMode="NoResize" Title="Система медицинской карты" Height="600" Width="1024"     WindowStartupLocation="CenterScreen" Activated="MainForm_Activated">
+    <Window.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMain">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="GridMain">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="50"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="StackPanelMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem4">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem5">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem6">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="listViewItem7">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="GridMain">
+                <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="GridMain">
+                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="StackPanelMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard x:Name="CloseMenu_BeginStoryboard" Storyboard="{StaticResource CloseMenu}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid >
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF019BFF" Offset="1"/>
+                <GradientStop Color="#CCEA4646"/>
+                <GradientStop Color="#cb0990" Offset="0.566"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel x:Name="StackPanelMenu" Width="250" HorizontalAlignment="Left" Margin="-250 0 0 0" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <StackPanel  Height="38" Margin="20,10,-766.4,0">
+                <TextBlock  Text="СИСТЕМА МЕДИЦИНСКОЙ КАРТЫ"  Margin="0" FontFamily="MADE Evolve Sans EVO" FontWeight="Bold" Foreground="#FFFBFBFB" FontSize="30" VerticalAlignment="Center" />
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="100" HorizontalAlignment="Center">
+                <Button Visibility="Hidden" Foreground="White" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
+                    <materialDesign:PackIcon Kind="Settings" Width="40" Height="40"/>
+                </Button>
+                <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="Picture/labl.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button Foreground="White" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
+                    <materialDesign:PackIcon Kind="InformationOutline" Width="40" Height="40"/>
+                </Button>
+            </StackPanel>
+            <ListView>
+                <ListViewItem x:Name="listViewItem" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="Home" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Главная" Foreground="White" Margin="10" VerticalAlignment="Center" />
+                    </StackPanel>
+
+
+                </ListViewItem>
+
+
+
+
+
+                <ListViewItem x:Name="listViewItem1" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+
+                    <StackPanel  Orientation="Horizontal" Margin="10 0" >
+                        <materialDesign:PackIcon Kind="AccountSearch" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock x:Name="menuItemConsultationList1" Foreground="White" Text="Список консультаций" Margin="10" VerticalAlignment="Center" MouseDown="menuItemConsultationList_Click" />
+
+                    </StackPanel>
+
+
+                </ListViewItem>
+
+                <ListViewItem x:Name="listViewItem2" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="Magnify" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock x:Name="menuItemDiagnosesList1" Foreground="White" Text="Список диагнозов" Margin="10" MouseDown="menuItemDiagnosesList_Click" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="listViewItem3" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+                    <StackPanel x:Name="menuItemDoctorsList1" Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="MedicalBag" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Список врачей" Foreground="White" Margin="10" VerticalAlignment="Center" MouseDown="menuItemDoctorsList_Click"  />
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="listViewItem7" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+                    <StackPanel x:Name="menuItemPatientList" Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="AccountSearch" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Список пациентов" Foreground="White" Margin="10" VerticalAlignment="Center" MouseDown="menuItemDoctorsList_Click"  />
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="listViewItem4" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="NewBox" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock x:Name="menuItemUserRegistration1" Foreground="White" Text="Новая карточка" Margin="10" VerticalAlignment="Center" MouseDown="menuItemUserRegistration_Click"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="listViewItem5" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="ExitToApp" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Войти/выйти с карточки" Foreground="White" Margin="10" VerticalAlignment="Center" MouseDown="menuItemLogin_Click"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem x:Name="listViewItem6" Height="60" RenderTransformOrigin="0.5,0.5">
+                    <ListViewItem.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListViewItem.RenderTransform>
+                    <StackPanel Orientation="Horizontal" Margin="10 0" >
+                        <materialDesign:PackIcon Kind="Power" Foreground="White" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock  Text="Выйти с программы" Foreground="White" Margin="10" MouseDown="menuItemExit_Click" VerticalAlignment="Center" />
+                    </StackPanel>
+                </ListViewItem>
+
+            </ListView>
+        </StackPanel>
+        <Grid x:Name="GridMain" Background="#FFFBFBFB" Width="1024" RenderTransformOrigin="0.598,0.44">
+
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+
+
+            <materialDesign:Transitioner
+  SelectedIndex="0"
+  AutoApplyTransitionOrigins="True" Margin="0,0,0.4,37.4">
+                <!-- you can use a slide for each page, let's add a touch of fade for our first page  -->
+
+                <materialDesign:TransitionerSlide x:Name="TransitionerSlide"
+    OpeningEffect="{materialDesign:TransitionEffect FadeIn}">
+                    <local:Slide1_Intro xmlns:local="clr-namespace:SystemMed.TransitionsDemo" Margin="0,0,0.4,-0.2" />
+                </materialDesign:TransitionerSlide>
+                <!-- but you can use bare xaml too -->
+                <local:Slide2_Intro xmlns:local="clr-namespace:SystemMed.TransitionsDemo" />
+                <!-- you can control (and create your own) wipes -->
+                <materialDesign:TransitionerSlide>
+                    <materialDesign:TransitionerSlide.BackwardWipe>
+                        <materialDesign:CircleWipe />
+                    </materialDesign:TransitionerSlide.BackwardWipe>
+                    <materialDesign:TransitionerSlide.ForwardWipe>
+                        <materialDesign:SlideWipe
+        Direction="Right" />
+                    </materialDesign:TransitionerSlide.ForwardWipe>
+                    <local:Slide3_Intro xmlns:local="clr-namespace:SystemMed.TransitionsDemo" />
+                </materialDesign:TransitionerSlide>
+                <!-- now we are going to slide this in by combining some extra effects.  the inner content slides in, so we'll set the outer background and clip, to keep things nice -->
+                <materialDesign:TransitionerSlide
+    Background="{DynamicResource MaterialDesignDarkBackground}"
+    Foreground="{DynamicResource MaterialDesignDarkForeground}"
+    ClipToBounds="True">
+                    <materialDesign:TransitionerSlide.OpeningEffects>
+                        <materialDesign:TransitionEffect
+        Kind="SlideInFromLeft"
+        Duration="0:0:0.8" />
+                        <materialDesign:TransitionEffect
+        Kind="SlideInFromBottom"
+        Duration="0:0:0.8"
+        OffsetTime="0:0:0.15" />
+                    </materialDesign:TransitionerSlide.OpeningEffects>
+                    <local:Slide4_CombineTransitions xmlns:local="clr-namespace:SystemMed.TransitionsDemo" />
+                </materialDesign:TransitionerSlide>
+                <!--<local:Slide5_TransitioningContent xmlns:local="clr-namespace:SystemMed.TransitionsDemo" />-->
+
+                <local:Slide7_MVVM xmlns:local="clr-namespace:SystemMed.TransitionsDemo" />
+            </materialDesign:Transitioner>
+
+
+            <Menu Height="94" Margin="43,0,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="811" Background="Transparent">
+                <MenuItem Header="Файлы" x:Name="menuItemFile"   Height="41" Width="127" >
+                    <MenuItem  Header="Выход" x:Name="menuItemExit" HorizontalAlignment="Left" Height="47" Width="139" Click="menuItemExit_Click" Background="White" />
+                </MenuItem>
+                <MenuItem x:Name="menuItemConsultations" Header="Осмотры" Height="41" Width="161" >
+                    <MenuItem x:Name="menuItemConsultationList" Header="Список осмотров" HorizontalAlignment="Left" Height="47" Width="223" Margin="0,0,-2.2,0" Click="menuItemConsultationList_Click" Background="White"/>
+                    <MenuItem x:Name="menuItemNewConsultation" Header="Зарегестрировать новый осмотр&#xA;" Height="37" Margin="0,0,-45.2,0" Click="menuItemNewConsultation_Click" Background="White"/>
+                </MenuItem>
+                <MenuItem x:Name="menuItemDiagnoses" Header="Диагнозы" Height="41" Width="171" >
+                    <MenuItem x:Name="menuItemDiagnosesList" Header="Список диагнозов" Height="47" HorizontalAlignment="Left" Width="274" Margin="0,0,-3.6,0" Click="menuItemDiagnosesList_Click" Background="White"/>
+                    <MenuItem x:Name="menuItemNewDiagnose" Header="Зарегестрировать новый диагноз" Height="43" HorizontalAlignment="Left" Width="270" Click="menuItemNewDiagnose_Click" Background="White"/>
+                </MenuItem>
+                <MenuItem x:Name="menuItemDoctors" Header="Врачи" Height="47" Width="115" >
+                    <MenuItem x:Name="menuItemDoctorsList" Header="Список врачей&#xA;&#x9;" Height="47" Margin="0,0,-28.8,0" HorizontalAlignment="Left" Width="168" Click="menuItemDoctorsList_Click" Background="White"/>
+                    <MenuItem x:Name="menuItemNewDoctor" Header="Новый врач" HorizontalAlignment="Left" Height="51" Width="153" Margin="0,0,-13.8,0" Click="menuItemNewDoctor_Click" Background="White"/>
+                </MenuItem>
+                <MenuItem x:Name="menuItemUser" Header="Пользователь" Height="42" Width="232" >
+                    <MenuItem x:Name="menuItemUserProfile" Header="Мой профиль" Height="47" Margin="0,0,-3.8,0" Background="White">
+                        <MenuItem x:Name="menuItemCurrentDoctor" Header="Врач - depr" HorizontalAlignment="Left" Height="47" Width="155" Margin="0,0,-15.8,0" Click="menuItemCurrentDoctor_Click"/>
+                        <MenuItem x:Name="menuItemCurrentPatient" Header="Пациент" HorizontalAlignment="Left" Height="51" Width="139" Click="menuItemCurrentPatient_Click" Background="White"/>
+                        <MenuItem x:Name="userToolStripMenuItem" Header="Пользователь" HorizontalAlignment="Left" Height="45" Width="168" Margin="0,0,-28.8,0" Click="userToolStripMenuItem_Click" Background="White"/>
+                    </MenuItem>
+                    <MenuItem x:Name="menuItemUserRegistration" Header="Регистрация" HorizontalAlignment="Left" Height="44" Width="158" Margin="0,0,-18.8,0" Click="menuItemUserRegistration_Click" Background="White"/>
+                    <MenuItem x:Name="menuItemLogin" Header="Войти" HorizontalAlignment="Left" Height="51" Width="139" Click="menuItemLogin_Click" Background="White"/>
+                </MenuItem>
+                <MenuItem x:Name="menuItemAdmin" Header="Админ - deprecared" Height="47" Width="268" >
+                    <MenuItem x:Name="menuItemUsersList" Header="Пользователи" HorizontalAlignment="Left" Height="47" Width="174" Margin="0,0,-34.8,0"/>
+                </MenuItem>
+                <MenuItem x:Name="menuItemPatients" Header="Пациент" Height="31" Width="230" Visibility="Collapsed">
+                    <MenuItem x:Name="menuItemPatientsList" Header="пациент лист" HorizontalAlignment="Left" Height="54" Width="172" Margin="0,0,-32.8,0" Click="menuItemPatientsList_Click"/>
+                    <MenuItem x:Name="menuItemNewPatient" Header="Нов пациент                           " HorizontalAlignment="Left" Height="44" Width="166" Margin="0,0,-26.8,0" Click="menuItemNewPatient_Click"/>
+                </MenuItem>
+            </Menu>
+            <Image x:Name="Kardoc" Source="Picture/Provider-Credentialing-Services.jpg"  Margin="-349,0,-110,-141.6" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"  >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image x:Name="Karadm" Source="Picture/admin.jpg"  Margin="-380,0,-374,-141.6" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"  />
+            <StatusBar Margin="0,0,182,0.4" Background="#FF019BFF" Height="34" VerticalAlignment="Bottom" Grid.ColumnSpan="2" >
+                <StatusBarItem Foreground="White" x:Name="labelStatusUser" Content="Пользователь:" Height="34" VerticalAlignment="Top" Margin="0,0,0,-0.4" Width="86"/>
+                <StatusBarItem Foreground="White" x:Name="labelStatusLoggedUser" Content="Анонимен" Height="34" VerticalAlignment="Bottom" Margin="0,0,0,-0.4" Width="496"/>
+                <StatusBarItem Foreground="White" x:Name="labelStatusNextConsultations" Content="Консультации (0)" Margin="0,0,0,-0.4" Width="109" RenderTransformOrigin="0.5,0.506" Height="34" VerticalAlignment="Bottom" MouseDoubleClick="labelStatusNextConsultations_Click" />
+            </StatusBar>
+
+            <TextBlock x:Name="labelStatusLoggedUserAnanim"  FontFamily="MADE Evolve Sans EVO"   FontSize="40" FontWeight="Bold" Margin="33,52,216,432.4" Grid.ColumnSpan="2" >
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#CCEA4646" Offset="1"/>
+                        <GradientStop Color="#FF019BFF"/>
+                        <GradientStop Color="#cb0990" Offset="0.566"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground></TextBlock>
+
+            <TextBlock x:Name="labelStatusLoggedUserPatient"  FontFamily="MADE Evolve Sans EVO"   FontSize="40" FontWeight="Bold" Margin="33,52,216,432.4" Grid.ColumnSpan="2" >
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#CCEA4646" Offset="1"/>
+                        <GradientStop Color="#FF019BFF"/>
+                        <GradientStop Color="#cb0990" Offset="0.566"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground></TextBlock>
+
+
+            <Button x:Name="buttonNewConsultaton" Click="menuItemNewConsultation_Click"
+                Style="{StaticResource MaterialDesignFloatingActionButton}"
+                materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                    materialDesign:ButtonProgressAssist.IndicatorForeground="MediumVioletRed"
+               
+                materialDesign:ButtonProgressAssist.Value="-1"
+                materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                 Margin="173,308,433.4,0" Background="White" Height="172" Width="Auto" VerticalAlignment="Top" >
+
+                <Grid Width="419" Height="65">
+
+                    <TextBlock TextWrapping="Wrap" FontWeight="Bold" FontFamily="MADE Evolve Sans EVO" FontSize="18"   Margin="4,21,228,7">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                        ДОБАВИТЬ КОНСУЛЬТАЦИЮ
+                    </TextBlock>
+                    <materialDesign:PackIcon Kind="EyePlus " HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" Width="150" Height="56" Margin="46,-9,223,18">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </materialDesign:PackIcon>
+                </Grid>
+
+            </Button>
+            <Button Visibility="Collapsed" Content="Зарегестрировать новый&#xD;&#xA; осмотр" Margin="10,131,0,0" VerticalAlignment="Top" Height="93"  HorizontalAlignment="Left" Width="198">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF019BFF" Offset="1"/>
+                        <GradientStop Color="#CCEA4646"/>
+                        <GradientStop Color="#cb0990" Offset="0.566"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="buttonNewDiagnose"  Click="menuItemNewDiagnose_Click" 
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                    materialDesign:ButtonProgressAssist.IndicatorForeground="MediumVioletRed"
+                    materialDesign:ButtonProgressAssist.Value="-1"
+                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    Margin="470,308,136.4,0" Background="White" Height="172" Width="Auto" VerticalAlignment="Top" >
+
+                <Grid Width="419" Height="65">
+
+                    <TextBlock TextWrapping="Wrap" FontFamily="MADE Evolve Sans EVO" FontSize="18" FontWeight="Bold"  Margin="10,16,272,11">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                        ДОБАВИТЬ ДИАГНОЗ
+                    </TextBlock>
+                    <materialDesign:PackIcon Kind="CommentPlusOutline " HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" Width="150" Height="56" Margin="59,-4,210,13">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </materialDesign:PackIcon>
+                </Grid>
+
+            </Button>
+
+            <Button x:Name="buttonNewPatient"  Click="menuItemUserRegistration_Click" 
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                    
+                    materialDesign:ButtonProgressAssist.Value="-1"
+                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    Margin="204,313,402.4,0" Background="White" Height="172" Width="Auto" VerticalAlignment="Top" >
+
+                <Grid Width="419" Height="65">
+
+                    <TextBlock TextWrapping="Wrap" FontFamily="MADE Evolve Sans EVO" FontSize="18" FontWeight="Bold"  Margin="10,16,272,11">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                        НОВАЯ КАРТОЧКА
+                    </TextBlock>
+                    <materialDesign:PackIcon Kind="AccountCardDetails" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" Width="150" Height="56" Margin="56,-2,213,11">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </materialDesign:PackIcon>
+                </Grid>
+
+            </Button>
+            <Button x:Name="buttonSpisPatient"  Click="menuItemPatientsList_Click" 
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                    materialDesign:ButtonProgressAssist.Value="-1"
+                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    Margin="543,313,63.4,0" Background="White" Height="172" Width="Auto" VerticalAlignment="Top" >
+
+                <Grid Width="419" Height="65">
+
+                    <TextBlock TextWrapping="Wrap" FontFamily="MADE Evolve Sans EVO" FontSize="18" FontWeight="Bold"  Margin="10,16,272,11">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                        СПИСОК ПАЦИЕНТОВ
+                    </TextBlock>
+                    <materialDesign:PackIcon Kind="AccountSearch" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" Width="150" Height="56" Margin="56,-2,213,11">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </materialDesign:PackIcon>
+                </Grid>
+
+            </Button>
+
+            <Button x:Name="buttonNewDoc"  Click="menuItemNewDoctor_Click" 
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                    materialDesign:ButtonProgressAssist.IndicatorForeground="CornflowerBlue"
+                    materialDesign:ButtonProgressAssist.Value="-1"
+                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    Margin="43,131,563.4,0" Background="White" Height="172" Width="Auto" VerticalAlignment="Top" >
+
+                <Grid Width="419" Height="65">
+
+                    <TextBlock TextWrapping="Wrap" FontFamily="MADE Evolve Sans EVO" FontSize="18" FontWeight="Bold"  Margin="10,16,272,11">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                        ДОБАВИТЬ ВРАЧА
+                    </TextBlock>
+                    <materialDesign:PackIcon Kind="AccountPlusOutline " HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" Width="150" Height="56" Margin="59,-4,210,13">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </materialDesign:PackIcon>
+                </Grid>
+
+            </Button>
+            <Button x:Name="buttonSpisDoc"  Click="menuItemDoctorsList_Click" 
+                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                    materialDesign:ButtonProgressAssist.IndicatorForeground="CornflowerBlue"
+                    materialDesign:ButtonProgressAssist.Value="-1"
+                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                    Margin="370,131,236.4,0" Background="White" Height="172" Width="Auto" VerticalAlignment="Top" >
+
+                <Grid Width="419" Height="65">
+
+                    <TextBlock TextWrapping="Wrap" FontFamily="MADE Evolve Sans EVO" FontSize="18" FontWeight="Bold"  Margin="10,16,272,11">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                        СПИСОК ВРАЧЕЙ
+                    </TextBlock>
+                    <materialDesign:PackIcon Kind="LibraryBooks" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Black" Width="150" Height="56" Margin="49,0,220,9">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush>
+                                <GradientStop Color="#CCEA4646" Offset="1"/>
+                                <GradientStop Color="#FF019BFF"/>
+                                <GradientStop Color="#cb0990" Offset="0.566"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </materialDesign:PackIcon>
+                </Grid>
+
+            </Button>
+            <Button x:Name="buttonDiagnoses" Visibility="Collapsed" Content="Поиск диагнозов" Height="95" Margin="559,256,0,0" Click="menuItemDiagnosesList_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152"/>
+            <Button x:Name="buttonConsultations" Visibility="Collapsed" Content="Поиск осмотров" Height="93" Margin="559,138,0,0" Click="menuItemConsultationList_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152"/>
+
+
+            <ProgressBar
+                IsIndeterminate="True" Margin="0,0,0.4,34.4" Height="3" VerticalAlignment="Bottom" />
+
+            <Grid x:Name="GridbuttonCurrentPatient" Margin="185,121,108.4,267.4">
+
+
+                <Button x:Name="buttonCurrentPatient"  FontFamily="MADE Evolve Sans EVO"  Background="#cb0990"  FontSize="30" Margin="0,31,0,0" Height="118" Click="menuItemCurrentPatient_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Width="461" >
+                    <Grid Width="404">
+
+                        <TextBlock TextWrapping="Wrap"  Margin="184,10,35,-10">ПРОФИЛЬ 
+                            &#xD;&#xA; ПАЦИЕНТА</TextBlock>
+                        <materialDesign:PackIcon Kind="AccountCardDetails" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Width="211" Height="94" Margin="-27,-2,220,0"/>
+
+                    </Grid>
+
+                </Button>
+
+
+            </Grid>
+            <Rectangle Margin="774,0,0,0.4" RadiusY="15" RadiusX="15" Grid.ColumnSpan="2" >
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF019BFF" Offset="1"/>
+                        <GradientStop Color="#CCEA4646"/>
+                        <GradientStop Color="#cb0990" Offset="0.566"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <!-- the transitioner will manage your transitions. notice how SelectedIndex is set to zero: the first slide (instead of the default of -1) -->
+
+
+
+            <Button x:Name="buttonExit" Style="{StaticResource MaterialDesignFlatButton}" Foreground="White" Content="Выход" HorizontalAlignment="Left" Height="32" Margin="528,0,0,2.4" Width="127" Click="menuItemExit_Click" VerticalAlignment="Bottom"/>
+
+            <Grid Grid.Column="1"  >
+
+                <Image Source="Picture/doc.jpg" Stretch="UniformToFill" Margin="0,0,-0.4,0" Height="150" VerticalAlignment="Top"/>
+                <Ellipse Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20 100" Stroke="White">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="Picture/labl.png" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Label Content="Аноним"  x:Name="labelStatusLoggedUser1" Foreground="White" FontSize="28" FontFamily="Nirmala UI Semilight" Margin="10 100" VerticalAlignment="Top"/>
+
+                <TextBlock TextWrapping="Wrap"  FontFamily="MADE Evolve Sans EVO" Foreground="#FFFBFBFB" FontWeight="Bold" FontSize="30" Margin="1,277,8.6,239.4" ><Run Text="МЕДИЦИНСКОЙ"/></TextBlock>
+                <TextBlock TextWrapping="Wrap"  FontFamily="MADE Evolve Sans EVO" FontWeight="Bold" Foreground="#FFFBFBFB" FontSize="30" Margin="68,331,70.6,193.4">КАРТЫ</TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="47,226,49.6,298.4" FontWeight="Bold" FontFamily="MADE Evolve Sans EVO" Foreground="#FFFBFBFB" FontSize="30"><Run Text="СИСТЕМА"/></TextBlock>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="ButtonCloseMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonCloseMenu_Click" Visibility="Collapsed">
+                    <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                </Button>
+                <Button x:Name="ButtonOpenMenu" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5" Click="ButtonOpenMenu_Click">
+                    <materialDesign:PackIcon Kind="Menu" Foreground="#FF3580BF"/>
+                </Button>
+
+
+                <TextBlock Text="ГЛАВНАЯ" Visibility="Hidden" FontFamily="MADE Evolve Sans EVO"   FontSize="40" FontWeight="Bold" Margin="24,23,29.4,133.6" Grid.Row="1" Grid.RowSpan="2">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#CCEA4646" Offset="1"/>
+                            <GradientStop Color="#FF019BFF"/>
+                            <GradientStop Color="#cb0990" Offset="0.566"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground></TextBlock>
+
+
+
+            </Grid>
+        </Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Margin="10">
+            <Button Visibility="Collapsed"  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+                <materialDesign:PackIcon Kind="SearchWeb" />
+            </Button>
+            <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonClose_Click">
+                <materialDesign:PackIcon Kind="Power"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

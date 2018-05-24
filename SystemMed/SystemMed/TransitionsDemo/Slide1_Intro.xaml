@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="SystemMed.TransitionsDemo.Slide1_Intro"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SystemMed.TransitionsDemo"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Background="White"
+>
+    <Grid>
+        <Image Source="../Picture/Provider-Credentialing-Services.jpg"  Margin="-360,-46,-360,-142"  />
+
+        <!--<Image Source="../Picture/sep-light.jpg"  Margin="-3,292,0,-98" RenderTransformOrigin="0.5,0.5">-->
+        <!--
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.194"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>-->
+        <TextBlock Text="Добро пожаловать в систему" FontFamily="MADE Evolve Sans EVO"   FontSize="40" FontWeight="Bold" Margin="43,43,-43,192" >
+            <TextBlock.Foreground>
+                <LinearGradientBrush>
+                    <GradientStop Color="#CCEA4646" Offset="1"/>
+                    <GradientStop Color="#FF019BFF"/>
+                    <GradientStop Color="#cb0990" Offset="0.566"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground></TextBlock>
+        <WrapPanel Height="191" Margin="10,108,0,1">
+            <Button  BorderThickness="0"
+                     Command="{x:Static materialDesign:Transitioner.MoveNextCommand}" Height="196"  Width="276"  >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.717"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Background>
+                    <ImageBrush ImageSource="../Picture/1019291.png" />
+                </Button.Background>
+            </Button>
+        </WrapPanel>
+
+
+        <StackPanel Margin="0,10,-43,-262"/>
+        <!-- you can easily use the move next, previous, first and last commands -->
+
+    </Grid>
+</UserControl>
+

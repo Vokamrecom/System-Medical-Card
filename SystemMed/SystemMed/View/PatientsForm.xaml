@@ -1,0 +1,102 @@
+﻿<Window x:Class="SystemMed.View.PatientsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMed.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="PatientsForm" Height="450" Width="916" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent"  WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Rectangle RadiusY="15" RadiusX="15" Fill="White"/>
+        <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="buttonCancel_Click" Margin="876,5,10,415">
+            <materialDesign:PackIcon Kind="Power"  Foreground="Black"/>
+        </Button>
+        <Rectangle Margin="0,0,709,-0.4" RadiusY="15" RadiusX="15" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF019BFF" Offset="1"/>
+                    <GradientStop Color="#CCEA4646"/>
+                    <GradientStop Color="#cb0990" Offset="0.566"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <DataGrid x:Name="dataGridViewResult" ItemsSource="{Binding}" IsReadOnly="True" Background="White" HorizontalAlignment="Left" Height="245" Margin="207,38,0,0" VerticalAlignment="Top" Width="709" AlternatingRowBackground="#FFEEEEEE"  RowBackground ="White" 
+                   
+                  BorderBrush="Black" Foreground="Black" OpacityMask="Black" FontFamily="ComicSans">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" " 
+                                    Binding="{Binding Path=PatientId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Width="110"
+                                    Binding="{Binding Path=Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ЕГН"  Width="110"
+                                    Binding="{Binding Path=Number}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Адрес" Width="110"
+                                    Binding="{Binding Path=Address}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Телефон"  Width="110"
+                                    Binding="{Binding Path=Phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата рождения" Width="110" 
+                                    Binding="{Binding Path=Birthdate, StringFormat=\{0:dd.MM.yyyy \}}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <WrapPanel HorizontalAlignment="Left" Height="340" Margin="10,0,0,0" VerticalAlignment="Top" Width="207">
+            <Label Content="Поиск &#xD;Пациентов" FontFamily="Segoe UI Black" FontSize="24" Margin="0,5,-7.6,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" Height="77" Width="190"/>
+            <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="55 0  " RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="../Picture/labl.png"  Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <WrapPanel>
+                <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="White"/>
+                <TextBox x:Name="textBoxName" Height="24" Margin="10 20 0 10 " TextWrapping="Wrap" Foreground="White" materialDesign:HintAssist.Hint="Имя(содержит)"  Width="120"/>
+            </WrapPanel>
+
+            <WrapPanel>
+                <materialDesign:PackIcon Kind="Numeric" VerticalAlignment="Center" Foreground="White"/>
+                <TextBox x:Name="textBoxNumber" Height="23" Margin="10" Foreground="White" TextWrapping="Wrap" materialDesign:HintAssist.Hint="ЕГН(содержит)"  Width="120"/>
+            </WrapPanel>
+
+            <Button x:Name="buttonSearch" Content="Поиск" Width="166" Margin ="10 30" Click="buttonSearch_Click" Height="30"/>
+        </WrapPanel>
+
+        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="10,366,0,0" VerticalAlignment="Top" Width="207"/>
+        <StatusBar x:Name="statusStripBottom" HorizontalAlignment="Left" Height="28" Background="White" Margin="212,422,0,-0.4" VerticalAlignment="Top" Width="572"/>
+        <WrapPanel x:Name="panelButtons" HorizontalAlignment="Left" Height="78" Margin="604,354,-95,0" VerticalAlignment="Top" Width="407">
+            <Button x:Name="buttonEdit"  Visibility="Collapsed" Width="58"  Click="buttonEdit_Click" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="Редактировать выбранного пациента" Height="58" >
+                <materialDesign:PackIcon
+                    Kind="TableEdit"
+                    Height="35"
+                    Width="35" />
+            </Button>
+            <Button x:Name="buttonDelete" Visibility="Hidden" Width="58" Margin="0 0 90 0" Click="buttonDelete_Click" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="Удалить выбранного пациента" Height="58" >
+                <materialDesign:PackIcon
+                    Kind="DeleteEmpty"
+                    Height="35"
+                    Width="35" />
+            </Button>
+            <Button x:Name="buttonAdd"  Width="58" Click="buttonAdd_Click" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="Добавить пациента" Height="58" >
+                <materialDesign:PackIcon
+                    Kind="Plus"
+                    Height="35"
+                    Width="35" />
+            </Button>
+        </WrapPanel>
+        <WrapPanel x:Name="panelChooseButtons" HorizontalAlignment="Left" Height="47" Margin="232,366,0,0" VerticalAlignment="Top" Width="315">
+            <Button x:Name="buttonChoose" Content="Выбрать" FontSize="15" FontWeight="Bold" Width="156" Height="40" Click="buttonChoose_Click"  ToolTip="Выбрать пациента"/>
+            <Button x:Name="buttonCancel" Content="Отменить" FontSize="15" FontWeight="Bold" Width="156" Click="buttonCancel_Click" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Отменить и выйти" Height="40"/>
+        </WrapPanel>
+    </Grid>
+</Window>

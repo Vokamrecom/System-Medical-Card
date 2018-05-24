@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="SystemMed.TransitionsDemo.Slide3_Intro"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SystemMed.TransitionsDemo"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <materialDesign:ColorZone Mode="PrimaryLight" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="-220,0,0,-297">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center"
+              MaxWidth="600">
+            <Image Source="../Picture/depositphotos_95065838-stock-illustration-colorful-graphic-background-with-connected.jpg" Margin="0,-243,-239,-0.2" Grid.RowSpan="2"></Image>
+
+            <Rectangle Margin="172,45,-90,311" RadiusY="15" RadiusX="15" Height="160" >
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#CC5A5A5A" Offset="1"/>
+                        <GradientStop Color="#CC5A5A5A"/>
+                        <GradientStop Color="#CC5A5A5A" Offset="0.566"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" FontFamily="Segoe UI Black" FontSize="24" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" Width="402" Margin="185,93,-67,-94">с медицинской картой пациента. Для работы с медкартой предусмторены следующие функции...</TextBlock>
+
+            <Button Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" 
+                        Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}"
+                        VerticalAlignment="Center"
+                        Margin="191,187,289,289">
+                <materialDesign:PackIcon Kind="StepBackward" />
+            </Button>
+            <Button Style="{DynamicResource MaterialDesignFloatingActionAccentButton}"                     
+                        Command="{x:Static materialDesign:Transitioner.MoveNextCommand}"                    
+                        Margin="248,181,216,279">
+                <materialDesign:PackIcon Kind="StepForward" />
+            </Button>
+
+
+        </Grid>
+    </materialDesign:ColorZone>
+</UserControl>

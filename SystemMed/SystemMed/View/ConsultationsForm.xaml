@@ -1,0 +1,101 @@
+﻿<Window x:Name="ConsultationsForm1" x:Class="SystemMed.View.ConsultationsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMed.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Консультации" Height="450" Width="916" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent"  WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-0.4" >
+        <Rectangle RadiusY="15" RadiusX="15" Fill="White"/>
+        <Rectangle Margin="0,0,709,-0.4" RadiusY="15" RadiusX="15" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF019BFF" Offset="1"/>
+                    <GradientStop Color="#CCEA4646"/>
+                    <GradientStop Color="#cb0990" Offset="0.566"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="Auto" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="buttonCancel_Click" Margin="876,5,10,415">
+            <materialDesign:PackIcon Kind="Power"  Foreground="Black"/>
+        </Button>
+
+        <DataGrid x:Name="dataGridViewResult" ItemsSource="{Binding }" IsReadOnly="True" HorizontalAlignment="Left" Height="312" Margin="207,28,0,0" VerticalAlignment="Top" Width="709"
+                  AlternatingRowBackground="#FFEEEEEE"  RowBackground ="White" 
+                  Background="White"  
+                  BorderBrush="Black" Foreground="Black" OpacityMask="Black" FontFamily="ComicSans">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" " 
+                                    Binding="{Binding Path=ConsultationId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Width="110"
+                                    Binding="{Binding  Path=ScheduleDate, StringFormat=\{0:dd.MM.yyyy\}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время" Width="75"
+                                    Binding="{Binding Path=ScheduleTime}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Врач"  Width="110"
+                                    Binding="{Binding  Path=Doctor.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пациент" Width="110"
+                                    Binding="{Binding Path=Patient.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Причина"  Width="110"
+                                    Binding="{Binding Path=Reason}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Заключение" Width="110" 
+                                    Binding="{Binding Path=Conclusion}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Left" Height="384" Margin="10,5,0,0" VerticalAlignment="Top" Width="182">
+
+
+            <Label Content="Поиск &#xD;Консультаций" FontFamily="Segoe UI Black" FontSize="24" Margin="0,5,-7.6,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" Height="77" Width="190"/>
+            <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10 " RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="../Picture/labl.png"  Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <DatePicker x:Name="dateTimePickerFrom" materialDesign:HintAssist.Hint="От даты"  Height="25" Margin ="0,10,0,30"/>
+            <DatePicker x:Name="dateTimePickerTo" materialDesign:HintAssist.Hint="До даты" Width="180" Margin="0 0 0 50"/>
+            <Button x:Name="buttonSearch" ToolTip="Искать консультацию" Content="Поиск" Margin ="10,0,10.4,0" Click="buttonSearch_Click"/>
+        </StackPanel>
+
+        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="10,394,0,0" VerticalAlignment="Top" Width="207"/>
+        <StatusBar x:Name="statusStripBottom" Background="White" HorizontalAlignment="Left" Height="30" Margin="207,420,0,0" VerticalAlignment="Top" Width="681"/>
+        <Button x:Name="buttonEdit"  Width="Auto"  Click="buttonEdit_Click" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="Редактировать выбранную консультацию" Height="Auto" Margin="263,345,595,46">
+            <materialDesign:PackIcon
+                    Kind="TableEdit"
+                    Height="35"
+                    Width="35" />
+        </Button>
+        <Button x:Name="buttonDelete1"  Width="Auto" Click="buttonDelete1_Click" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="Удалить выбранную консультацию" Height="Auto" Margin="345,345,513,46">
+            <materialDesign:PackIcon
+                    Kind="DeleteEmpty"
+                    Height="35"
+                    Width="35" />
+        </Button>
+        <Button x:Name="buttonAdd"  Width="Auto" Click="buttonAdd_Click" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="Добавить консультацию" Height="Auto" Margin="802,345,56,46">
+            <materialDesign:PackIcon
+                    Kind="Plus"
+                    Height="35"
+                    Width="35" />
+        </Button>
+
+    </Grid>
+</Window>

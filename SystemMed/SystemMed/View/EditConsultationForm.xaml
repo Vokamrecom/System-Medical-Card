@@ -1,0 +1,111 @@
+﻿<Window x:Name="EditConsultationForm1" x:Class="SystemMed.View.EditConsultationForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMed.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Консультация" Height="450" Width="916" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent"  WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        
+        <Rectangle RadiusY="15" RadiusX="15" Fill="White"/>
+        <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="Auto" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="buttonCancel_Click" Margin="876,5,10,415">
+            <materialDesign:PackIcon Kind="Power"  Foreground="Black"/>
+        </Button>
+        <Rectangle Margin="0,0,709,-0.4" RadiusY="15" RadiusX="15" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF019BFF" Offset="1"/>
+                    <GradientStop Color="#CCEA4646"/>
+                    <GradientStop Color="#cb0990" Offset="0.566"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="62,58,774,311.6" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="../Picture/labl.png"  Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <StackPanel Margin="0,0,347,22.6">
+
+
+
+            <Label Content="Консультация" FontFamily="Segoe UI Black" FontSize="24" Margin="10,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" Height="135" Width="208"/>
+
+
+
+            <WrapPanel HorizontalAlignment="Left" Height="30" Width="195">
+                <Label x:Name="label6" Content="№." Height="27" Foreground="White" Width="41" FontFamily="Segoe UI Black" FontSize="16"/>
+                <Label x:Name="labelId" Content="0" Foreground="White" FontFamily="Segoe UI Black" FontSize="16" />
+            </WrapPanel>
+            <WrapPanel Height="87" Margin="0,0,-9.2,0">
+                <Label x:Name="labelDoctor" FontFamily="Segoe UI Black" FontSize="16" Content="Врач" Foreground="White" Height="31" Width="52"/>
+                <WrapPanel x:Name="panelDoctor" Height="30" Width="500" >
+                    <TextBox x:Name="textBoxDoctorName" Height="30" IsEnabled="False" Foreground="White" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Выберите врача!" Width="121"/>
+                    <Label x:Name="label3" Content="*" Foreground="White" Height="30" Width="16"/>
+
+                </WrapPanel>
+                <Button x:Name="buttonLoadDoctor" Margin="50 10 20 0" Content="Выбрать"  Height="32" Width="103" ToolTip="Выбрать врача" Click="buttonLoadDoctor_Click"/>
+
+            </WrapPanel>
+            <WrapPanel Height="148" Margin="0,0,360.8,0">
+                <Label x:Name="labelPatient" Content="Пациент" Height="34" Foreground="White" FontFamily="Segoe UI Black" FontSize="18"/>
+                <WrapPanel x:Name="panelPatient1" Height="60" Width="234" >
+                    <Label x:Name="label1" Content="Имя" Height="29" Width="51" Foreground="White" FontFamily="Segoe UI Black" FontSize="16"/>
+                    <TextBox x:Name="textBoxPatientName" IsEnabled="False" Height="25" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Имя пациента" Foreground="White" Width="119"/>
+                    <Label x:Name="label5" Content="*" Foreground="White" Height="30" Width="31"/>
+                    <Label x:Name="label2" Content="ЕГН" Height="27" Width="48" Foreground="White" FontFamily="Segoe UI Black" FontSize="16"/>
+                    <TextBox x:Name="textBoxPatientNumber" IsEnabled="False" Height="26" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Номер пациента" Foreground="White" Width="122"/>
+                    <Label x:Name="label8" Content="*" Foreground="White" Height="30" Width="16"/>
+                </WrapPanel>
+                <WrapPanel>
+                    <Button x:Name="buttonLoadPatient" Content="Выбрать" Margin="50 20 0 0 " Height="32" Width="103" ToolTip="Выбрать пациента" Click="buttonLoadPatient_Click"/>
+                </WrapPanel>
+
+            </WrapPanel>
+        </StackPanel>
+
+
+        <StackPanel HorizontalAlignment="Left" Height="296" Margin="228,41,-12,0" VerticalAlignment="Top" Width="700">
+
+            <WrapPanel Height="76">
+                <Label x:Name="labelScheduleDate" FontFamily="Segoe UI Black" FontSize="16" Content="Дата" Height="30" Width="61"/>
+                <DatePicker x:Name="dateTimePickerScheduleDate" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Назначить дату"  VerticalAlignment="Top" Width="155"/>
+                <Label x:Name="label7" Content="*" Foreground="Red" Height="30" Width="16"/>
+                <Label x:Name="labelScheduleTime"  FontFamily="Segoe UI Black" FontSize="16" Content="Время"/>
+                <materialDesign:TimePicker x:Name="dateTimePickerScheduleTime" HorizontalAlignment="Left" materialDesign:HintAssist.Hint="Время консультации"  VerticalAlignment="Top" Width="156" Height="27" Margin="10 0 "/>
+            </WrapPanel>
+            <WrapPanel Height="98">
+                <Label x:Name="labelReason" FontFamily="Segoe UI Black" FontSize="14" Content="Причина консультации" Width="185"/>
+
+                <TextBox x:Name="textBoxReason" materialDesign:HintAssist.Hint="С какой проблемой обратились" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap"  VerticalAlignment="Top" Width="461"/>
+
+            </WrapPanel>
+            <WrapPanel Height="91">
+                <Label x:Name="labelNotes" FontFamily="Segoe UI Black" FontSize="14" Content="Примечание" Width="110"/>
+                <TextBox x:Name="textBoxNotes" HorizontalAlignment="Left" Height="25" materialDesign:HintAssist.Hint="Дополнительная информация"  TextWrapping="Wrap" VerticalAlignment="Top" Width="536"/>
+            </WrapPanel>
+            <WrapPanel Height="57">
+                <Label x:Name="label4" FontFamily="Segoe UI Black" FontSize="14" Content="Заключение" Width="108"/>
+                <TextBox x:Name="textBoxConclusion" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Заключение" VerticalAlignment="Top" Width="534"/>
+            </WrapPanel>
+        </StackPanel>
+
+        <WrapPanel HorizontalAlignment="Left" Height="53" Margin="469,374,0,0" VerticalAlignment="Top" Width="408">
+            <Button x:Name="buttonSave" Content="Записать" Width="176" Click="buttonSave_Click" ToolTip="Записать консультацию" Height="36"/>
+            <Button x:Name="buttonClose" Style="{StaticResource MaterialDesignFlatButton}" ToolTip="Отменить запись и выйти" Content="Отменить и закрыть" Width="176" Height="36" Margin="30 0 0 0" Click="buttonClose_Click"/>
+        </WrapPanel>
+
+    </Grid>
+</Window>

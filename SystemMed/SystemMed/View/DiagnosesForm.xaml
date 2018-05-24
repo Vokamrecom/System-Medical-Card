@@ -1,0 +1,101 @@
+﻿<Window x:Name="DiagnosesForm1" x:Class="SystemMed.View.DiagnosesForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemMed.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Диагнозы"  Height="450" Width="916" ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True" Background="Transparent"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle RadiusY="15" RadiusX="15" Fill="White"/>
+
+        <Rectangle Margin="0,0,709,-0.4" RadiusY="15" RadiusX="15" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF019BFF" Offset="1"/>
+                    <GradientStop Color="#CCEA4646"/>
+                    <GradientStop Color="#cb0990" Offset="0.566"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        
+
+        <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="buttonCancel_Click" Margin="876,5,10,415">
+            <materialDesign:PackIcon Kind="Power"  Foreground="Black"/>
+        </Button>
+
+        <StackPanel HorizontalAlignment="Left" Height="357" Margin="4,10,0,0" VerticalAlignment="Top" Width="200">
+            <Label Content="Поиск &#xD;Диагнозов" FontFamily="Segoe UI Black" FontSize="24" Margin="10,5,0,5" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" Height="77" Width="180"/>
+            <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10 " RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="../Picture/labl.png"  Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <WrapPanel Margin="10 30">
+                <materialDesign:PackIcon Kind="BookPlus" Foreground="White" Height="30" Width="22" />
+                <TextBox x:Name="textBoxSubject" Margin="5 0 0 0" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Название(диагноза)" Foreground="White" VerticalAlignment="Top" Width="140"/>
+
+            </WrapPanel>
+            <Button x:Name="buttonSearch" ToolTip="Искать диагноз" Margin="23,30,24,0" Content="Поиск" Click="buttonSearch_Click"/>
+        </StackPanel>
+        <DataGrid x:Name="dataGridViewResult"  ItemsSource="{Binding }" IsReadOnly="True"  HorizontalAlignment="Left" Height="312" Margin="207,28,0,0" VerticalAlignment="Top" Width="709"
+                  AlternatingRowBackground="#FFEEEEEE"  RowBackground ="White" 
+                  Background="White"  
+                  BorderBrush="Black" Foreground="Black" OpacityMask="Black" FontFamily="ComicSans">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" " 
+                                    Binding="{Binding Path=DiagnoseId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Диагноз" Width="110"
+                                    Binding="{Binding Path=Subect}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пациент"  Width="110"
+                                    Binding="{Binding Path=Patient.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Width="110"
+                                    Binding="{Binding Path=DiagnosticationDate, StringFormat=\{0:dd.MM.yyyy\}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Врач"  Width="110"
+                                    Binding="{Binding Path=Doctor.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Примечание"  Width="110"
+                                    Binding="{Binding Path=Notes}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Рецепт"  Width="110"
+                                    Binding="{Binding Path=Prescription}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="buttonEdit"  Width="Auto"  Click="buttonEdit_Click" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                    ToolTip="Редактировать выбранный диагноз" Height="Auto" Margin="252,345,606,46.6">
+            <materialDesign:PackIcon
+                    Kind="TableEdit"
+                    Height="35"
+                    Width="35" />
+        </Button>
+        <Button x:Name="buttonDelete" Width="Auto" Click="buttonDelete_Click"  Style="{StaticResource MaterialDesignFloatingActionButton}"
+                ToolTip="Удалить выбранный диагноз" Height="Auto" Margin="335,345,523,46.6">
+            <materialDesign:PackIcon
+                Kind="DeleteEmpty"
+                Height="35"
+                Width="35" />
+        </Button>
+        <Button x:Name="buttonAdd"  Width="Auto" Click="buttonAdd_Click"  Style="{StaticResource MaterialDesignFloatingActionButton}"
+                ToolTip="Добавить диагноз" Height="Auto" Margin="798,340,60,51.6">
+            <materialDesign:PackIcon
+                Kind="Plus"
+                Height="35"
+                Width="35" />
+        </Button>
+
+
+        <StatusBar x:Name="statusStripBottom" Background="White" HorizontalAlignment="Left" Height="20" Margin="212,428,0,0" VerticalAlignment="Top" Width="624"/>
+        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Height="38" Margin="10,402,0,0" VerticalAlignment="Top" Width="173"/>
+
+
+    </Grid>
+</Window>

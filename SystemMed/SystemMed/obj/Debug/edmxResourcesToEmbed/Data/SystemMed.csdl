@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SystemMed" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="SystemMedContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Consultations" EntityType="SystemMed.Consultation" />
+    <EntitySet Name="Diagnoses" EntityType="SystemMed.Diagnosis" />
+    <EntitySet Name="Doctors" EntityType="SystemMed.Doctor" />
+    <EntitySet Name="Patients" EntityType="SystemMed.Patient" />
+    <EntitySet Name="Users" EntityType="SystemMed.User" />
+    <AssociationSet Name="FK_Consultations_Doctors" Association="SystemMed.FK_Consultations_Doctors">
+      <End Role="Doctors" EntitySet="Doctors" />
+      <End Role="Consultations" EntitySet="Consultations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultations_Patients" Association="SystemMed.FK_Consultations_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Consultations" EntitySet="Consultations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diagnoses_Doctors" Association="SystemMed.FK_Diagnoses_Doctors">
+      <End Role="Doctors" EntitySet="Doctors" />
+      <End Role="Diagnoses" EntitySet="Diagnoses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diagnoses_Patients" Association="SystemMed.FK_Diagnoses_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Diagnoses" EntitySet="Diagnoses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Doctors" Association="SystemMed.FK_Users_Doctors">
+      <End Role="Doctors" EntitySet="Doctors" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Patients" Association="SystemMed.FK_Users_Patients">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Consultation">
+    <Key>
+      <PropertyRef Name="ConsultationId" />
+    </Key>
+    <Property Name="ConsultationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScheduleDate" Type="DateTime" Precision="3" />
+    <Property Name="ScheduleTime" Type="Time" Precision="7" />
+    <Property Name="PatientId" Type="Int32" />
+    <Property Name="DoctorId" Type="Int32" />
+    <Property Name="Reason" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="Conclusion" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Doctor" Relationship="SystemMed.FK_Consultations_Doctors" FromRole="Consultations" ToRole="Doctors" />
+    <NavigationProperty Name="Patient" Relationship="SystemMed.FK_Consultations_Patients" FromRole="Consultations" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Diagnosis">
+    <Key>
+      <PropertyRef Name="DiagnoseId" />
+    </Key>
+    <Property Name="DiagnoseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientId" Type="Int32" />
+    <Property Name="DoctorId" Type="Int32" />
+    <Property Name="Subect" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="DiagnosticationDate" Type="DateTime" Precision="3" />
+    <Property Name="Prescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Doctor" Relationship="SystemMed.FK_Diagnoses_Doctors" FromRole="Diagnoses" ToRole="Doctors" />
+    <NavigationProperty Name="Patient" Relationship="SystemMed.FK_Diagnoses_Patients" FromRole="Diagnoses" ToRole="Patients" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="DoctorId" />
+    </Key>
+    <Property Name="DoctorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Skils" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Consultations" Relationship="SystemMed.FK_Consultations_Doctors" FromRole="Doctors" ToRole="Consultations" />
+    <NavigationProperty Name="Diagnoses" Relationship="SystemMed.FK_Diagnoses_Doctors" FromRole="Doctors" ToRole="Diagnoses" />
+    <NavigationProperty Name="Users" Relationship="SystemMed.FK_Users_Doctors" FromRole="Doctors" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Birthdate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Consultations" Relationship="SystemMed.FK_Consultations_Patients" FromRole="Patients" ToRole="Consultations" />
+    <NavigationProperty Name="Diagnoses" Relationship="SystemMed.FK_Diagnoses_Patients" FromRole="Patients" ToRole="Diagnoses" />
+    <NavigationProperty Name="Users" Relationship="SystemMed.FK_Users_Patients" FromRole="Patients" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="DoctorId" Type="Int32" />
+    <Property Name="RoleId" Type="Int16" />
+    <Property Name="PatientId" Type="Int32" />
+    <NavigationProperty Name="Doctor" Relationship="SystemMed.FK_Users_Doctors" FromRole="Users" ToRole="Doctors" />
+    <NavigationProperty Name="Patient" Relationship="SystemMed.FK_Users_Patients" FromRole="Users" ToRole="Patients" />
+  </EntityType>
+  <Association Name="FK_Consultations_Doctors">
+    <End Type="SystemMed.Doctor" Role="Doctors" Multiplicity="0..1" />
+    <End Type="SystemMed.Consultation" Role="Consultations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctors">
+        <PropertyRef Name="DoctorId" />
+      </Principal>
+      <Dependent Role="Consultations">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultations_Patients">
+    <End Type="SystemMed.Patient" Role="Patients" Multiplicity="0..1" />
+    <End Type="SystemMed.Consultation" Role="Consultations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="Consultations">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diagnoses_Doctors">
+    <End Type="SystemMed.Doctor" Role="Doctors" Multiplicity="0..1" />
+    <End Type="SystemMed.Diagnosis" Role="Diagnoses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctors">
+        <PropertyRef Name="DoctorId" />
+      </Principal>
+      <Dependent Role="Diagnoses">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diagnoses_Patients">
+    <End Type="SystemMed.Patient" Role="Patients" Multiplicity="0..1" />
+    <End Type="SystemMed.Diagnosis" Role="Diagnoses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="Diagnoses">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Doctors">
+    <End Type="SystemMed.Doctor" Role="Doctors" Multiplicity="0..1" />
+    <End Type="SystemMed.User" Role="Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctors">
+        <PropertyRef Name="DoctorId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Patients">
+    <End Type="SystemMed.Patient" Role="Patients" Multiplicity="0..1" />
+    <End Type="SystemMed.User" Role="Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

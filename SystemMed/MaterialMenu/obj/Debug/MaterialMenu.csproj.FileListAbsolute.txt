@@ -1,0 +1,17 @@
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\bin\Debug\MaterialMenu.dll.config
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\bin\Debug\MaterialMenu.dll
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\bin\Debug\MaterialMenu.pdb
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu.csprojResolveAssemblyReference.cache
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MenuButton.g.cs
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\SideMenu.g.cs
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu_MarkupCompile.cache
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu_MarkupCompile.lref
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MenuButton.baml
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\SideMenu.baml
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu.g.resources
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu.Properties.Resources.resources
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu.csproj.GenerateResource.cache
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu.csproj.CoreCompileInputs.cache
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu.dll
+C:\Users\Vokamrecom\Desktop\Controls-master\MaterialMenu-master\MaterialMenu\obj\Debug\MaterialMenu.pdb

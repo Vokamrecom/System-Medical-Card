@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SystemMed.Data.DiagnosesDataAccess">
+    <Position X="11.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAABAAAQAQAAAAAAAAAEAACAAAQAAAAAIA=</HashCode>
+      <FileName>Data\DiagnosisDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.ConsultationDataAccess">
+    <Position X="8.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAACAAAiAUAAAAAACAEQAAA=</HashCode>
+      <FileName>Data\ConsultationDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.DoctorDataAccess">
+    <Position X="14.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAACAAAAAAAAAAAlAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Data\DoctorDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.PatientsDataAccess">
+    <Position X="12.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAACAAAAEABAAAAAACEAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Data\PatientsDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.UsersDataAccess">
+    <Position X="9.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAIAAAAAAAEAAACAAEAAQAAAACAAAAAQAEAAAA=</HashCode>
+      <FileName>Data\UsersDataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.ConsultationsPresenter">
+    <Position X="9.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAQAFAAAAEAIAIAAAAAA=</HashCode>
+      <FileName>Logic\ConsultationsPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.DiagnosesPresenter">
+    <Position X="8.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAQAAAAAAAAAAAAAAIAAAAAABABAAEAAAIAAAAAA=</HashCode>
+      <FileName>Logic\DiagnosesPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.DoctorsPresenter">
+    <Position X="11.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAABAwAAEgAAIAAAAAA=</HashCode>
+      <FileName>Logic\DoctorsPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.EditConsultationPresenter">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgJAAAAAAAAAAAAgAIgAAAAABICAAAAAgAAAAAAA=</HashCode>
+      <FileName>Logic\EditConsultationPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.EditDiagnosisPresenter">
+    <Position X="11.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAEABAAAAgAAgAAAAABICAAAAAgAAAAAAA=</HashCode>
+      <FileName>Logic\EditDiagnosisPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.EditDoctorPresenter">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAgAAgAEAAABICQAAAAgAAAAAAA=</HashCode>
+      <FileName>Logic\EditDoctorPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.EditPatientPresenter">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAgABgAAAAABICAAAEAgAIAACAA=</HashCode>
+      <FileName>Logic\EditPatientPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.EditUserPresenter">
+    <Position X="14.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgIAAAAAAAAAAAAgAAgAAAAABICAAAAAgAAAAAIA=</HashCode>
+      <FileName>Logic\EditUserPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.Membership">
+    <Position X="14.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIQIAAIAAAAAAAEAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Logic\Membership.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Logic.PatientsPresenter">
+    <Position X="12.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAACBAAAAFAAAIAABAAA=</HashCode>
+      <FileName>Logic\PatientsPresenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.Consultation">
+    <Position X="34.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAgIACCAQBJAIIiEAAQEYACAEQDRASAEQBQAAgCSAE=</HashCode>
+      <FileName>Models\Consultation.extension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.Diagnosis">
+    <Position X="33" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIIACBQgJAIAAAACUAAAAIAQCVCSgAQARoAECKQE=</HashCode>
+      <FileName>Models\Diagnosis.extension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Data.Objects.DataClasses.EntityObject">
+    <Position X="36" Y="9.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SystemMed.Data.Doctor">
+    <Position X="36" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACASAAAAAIAKCQEAAAJEYAEQACSAgCAAAAIABCAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.Patient">
+    <Position X="37.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACKSQAAQAAAAASEEAEIFYAEQAAQAACCQAYIABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Data.User">
+    <Position X="39" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAIAAQAIANAIIAIEAAwQAAQCBASGAQAQAAACGAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemMed.Properties.Resources">
+    <Position X="15.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SystemMed.View.IConsultationsView">
+    <Position X="19" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAIAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>View\IConsultationsView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IDiagnosesView">
+    <Position X="19.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAg=</HashCode>
+      <FileName>View\IDiagnosesView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IDoctorsView">
+    <Position X="19.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgAAIAAAAAA=</HashCode>
+      <FileName>View\IDoctorsView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IEditConsultationView">
+    <Position X="16.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAACAQAAAAIAAAAAAQAAAAACQAAAAAAAIAgBQAA=</HashCode>
+      <FileName>View\IEditConsultationView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IEditDiagnosisView">
+    <Position X="18" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAQgAAAAAAIAAAAAAAAACUAAAAAAAIAABAAA=</HashCode>
+      <FileName>View\IEditDiagnosisView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IEditDoctorView">
+    <Position X="18" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAACQAACAAAAIAAAAAA=</HashCode>
+      <FileName>View\IEditDoctorView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IEditPatientView">
+    <Position X="16.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAQAAABAAAEAAAAQAAQAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>View\IEditPatientView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IEditUserView">
+    <Position X="17.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAACAQAAIAAAIAA=</HashCode>
+      <FileName>View\IEditUserView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemMed.View.IPatientsView">
+    <Position X="19.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAAA=</HashCode>
+      <FileName>View\IPatientsView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SystemMed.Models.UserRoles">
+    <Position X="2.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAEAAAQAAAAAAAAACAA=</HashCode>
+      <FileName>Models\UserRolesEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

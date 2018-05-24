@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="SystemMed.TransitionsDemo.Slide7_MVVM"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SystemMed.TransitionsDemo"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <materialDesign:ColorZone Mode="PrimaryLight" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="-220,0,-211,-297">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center"
+              MaxWidth="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Source="../Picture/руки1.png" Margin="238,-82,-103,-56.2" Grid.RowSpan="2"></Image>
+            <Image Source="../Picture/кирилл.png" Margin="279,-32,-82,323.8"></Image>
+            <Image Source="../Picture/start.png" Margin="734,46,-534,206.8"></Image>
+            <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" TextWrapping="Wrap" FontFamily="Segoe UI Black" FontSize="24" TextAlignment="Center" Margin="-62,146,321,323.8">Разработано в целях курсового проекта. Автор Ермаков К.А.</TextBlock>
+            <!--
+            <TextBlock Style="{DynamicResource MaterialDesignHeadlineTextBlock}" TextWrapping="Wrap" TextAlignment="Center">Finally, we will put it all together to create full master &amp; details pages, controlled via MVVM.</TextBlock>
+            -->
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="78,262,450,354.8">
+                <Button Style="{DynamicResource MaterialDesignFloatingActionMiniButton}" 
+                        Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}"
+                        VerticalAlignment="Center" HorizontalAlignment="Left" 
+                        Margin="16">
+                    <materialDesign:PackIcon Kind="StepBackward" />
+                </Button>
+                <!--
+                <Button Style="{DynamicResource MaterialDesignFloatingActionAccentButton}"                     
+                    Command="{x:Static materialDesign:Transitioner.MoveNextCommand}"
+                    VerticalAlignment="Top"
+                    Margin="16">
+                    <materialDesign:PackIcon Kind="StepForward" />
+                </Button>
+                -->
+            </StackPanel>
+        </Grid>
+    </materialDesign:ColorZone>
+</UserControl>
